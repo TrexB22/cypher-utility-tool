@@ -1,3 +1,8 @@
+/********** README **********
+ * Although I'm not fond of using ChatGPT, I utilized it to generate this script because I lack expertise in creating editor tools and GUIs.
+ * However, I wrote the AES password and key generation logic myself, the GUI is the only aspect generated with ChatGPT.
+ */
+
 #if UNITY_EDITOR
 
 using System;
