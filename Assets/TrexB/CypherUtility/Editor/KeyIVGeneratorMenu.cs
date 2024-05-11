@@ -1,5 +1,5 @@
 /********** README **********
- * Although I'm not fond of using ChatGPT, I utilized it to generate this script because I lack expertise in creating editor tools and GUIs.
+ * Although I'm not fan of using ChatGPT, I utilized it to generate this script because I lack expertise in creating editor tools and GUIs.
  * However, I wrote the AES password and key generation logic myself, the GUI is the only aspect generated with ChatGPT.
  */
 
@@ -14,8 +14,8 @@ namespace TrexB.CipherUtility.Editor
 {
     public class KeyIVGeneratorMenu : EditorWindow
     {
-        private string _key = "";
-        private string _iv = "";
+        private string _key;
+        private string _iv;
 
         #region Toolbar
         [MenuItem("TrexB/CipherUtility/Generate Key and IV")]
@@ -87,7 +87,7 @@ namespace TrexB.CipherUtility.Editor
             {
                 // KEY
                 aes.GenerateKey();
-                #region Convert.ToBase64String Explaination
+                #region Convert.ToBase64String Explanation
                 // Convert.ToBase64String is a method that takes some data, like text or numbers, and converts it into a special type of text format called Base64.
                 // This format is often used to represent binary data, like images or files, as text so that it can be easily stored or transmitted over networks.
                 #endregion
