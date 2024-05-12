@@ -83,7 +83,7 @@ namespace TrexB.CipherUtility.Editor
         #region Logic for creating a Key and IV
         private (string, string) GenerateKeyAndIV()
         {
-            using (var aes = Aes.Create())
+            using (Aes aes = Aes.Create())
             {
                 // KEY
                 aes.GenerateKey();

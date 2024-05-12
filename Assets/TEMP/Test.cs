@@ -34,12 +34,12 @@ public class Test : MonoBehaviour
             isEnemyAlive = false
         };
 
-        Debug.Log(SecureDataManager.SaveData("/savedata.json", dataFormat));
+        Debug.Log(SecureDataManager.SaveData("savedata.json", dataFormat));
     }
 
     private void LoadData()
     {
-        Debug.Log(SecureDataManager.LoadData<SaveDataFormat>("/savedata.json"));
+        Debug.Log(SecureDataManager.LoadData<SaveDataFormat>("savedata.json"));
     }
 
 } // class
