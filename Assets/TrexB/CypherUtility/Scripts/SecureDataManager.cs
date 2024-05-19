@@ -12,12 +12,19 @@ namespace TrexB.CipherUtility
         private const string _IV = "cil6P5eP3cfjS1DVki/IhQ==";
 
         #region Save Data
-        public static bool SaveData<T>(string outputFileNameWithExtension, T rawData)
+        /// <summary>
+        /// Saves the provided data securely to a file.
+        /// </summary>
+        /// <typeparam name="T">The type of data to be saved.</typeparam>
+        /// <param name="outputFileNameWithExtension">The name of the file to save the data to, including the file extension.</param>
+        /// <param name="dataToSave">The data to be saved.</param>
+        /// <returns>True if the data is saved successfully; otherwise, false.</returns>
+        public static bool SaveData<T>(string outputFileNameWithExtension, T dataToSave)
         {
             string path = GetFilePath(outputFileNameWithExtension);
 
             // JsonUtility.ToJson(): This method returns a string with JSON representation.
-            string jsonData = JsonUtility.ToJson(rawData);
+            string jsonData = JsonUtility.ToJson(dataToSave);
 
             try
             {
@@ -33,7 +40,7 @@ namespace TrexB.CipherUtility
 
                 using FileStream stream = File.Create(path);
 
-                EncryptionManager.WriteEncryptedData(_KEY, _IV, stream, jsonData);
+                SecureDataWriter.WriteEncryptedData(_KEY, _IV, stream, jsonData);
 
                 return true;
             }
@@ -43,9 +50,17 @@ namespace TrexB.CipherUtility
                 return false;
             }
         } // SaveData
-#endregion
+        #endregion
 
         #region Load Data
+        /// <summary>
+        /// Loads and decrypts data of type T from a file.
+        /// </summary>
+        /// <typeparam name="T">The type of data to be loaded.</typeparam>
+        /// <param name="outputFileNameWithExtension">The name of the file containing the data to load, including the file extension.</param>
+        /// <returns>The decrypted data of type T.</returns>
+        /// <exception cref="FileNotFoundException">Thrown if the specified file does not exist.</exception>
+        /// <exception cref="Exception">Thrown if an error occurs during data loading and decryption.</exception>
         public static T LoadData<T>(string outputFileNameWithExtension)
         {
             string path = GetFilePath(outputFileNameWithExtension);
@@ -61,7 +76,7 @@ namespace TrexB.CipherUtility
 
             try
             {
-                T data = DecryptionManager.ReadEncryptedData<T>(_KEY, _IV, path);
+                T data = SecureDataReader.ReadEncryptedData<T>(_KEY, _IV, path);
                 return data;
             }
             catch (Exception e)

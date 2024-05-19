@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TrexB/CypherUtility/Sample/Scene/DataPersistence.unity
+    path: Assets/Sample/Scene/DataPersistence.unity
     guid: 318b6de0484d4f24aa2a2732ded21a9a
   m_configObjects: {}
