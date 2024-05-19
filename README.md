@@ -34,6 +34,30 @@ The Cipher Utility Toolkit has been thoroughly tested and is fully operational o
 Download and Import the Latest .unitypackage file from <a href="https://github.com/TrexB22/cypher-utility-tool/releases">Releases Page</a>.
 
 ## Usage
+**Update Key & IV**
+
+Follow the steps depicted in the image below.
+* Open the Editor Tool
+
+  ![Editor Tool](https://www.hindustantimes.com/ht-img/img/2024/01/04/550x309/mr_bean_1704383140543_1704383147458.jpg)
+* Press the Generate Button to create a random Key and IV.
+
+  ![Editor Tool](https://www.hindustantimes.com/ht-img/img/2024/01/04/550x309/mr_bean_1704383140543_1704383147458.jpg)
+
+* Select the Copy button to copy the Key and IV to the clipboard.
+
+  ![Editor Tool](https://www.hindustantimes.com/ht-img/img/2024/01/04/550x309/mr_bean_1704383140543_1704383147458.jpg)
+
+* Open the SecureDataManager.cs script.
+
+  ![Editor Tool](https://www.hindustantimes.com/ht-img/img/2024/01/04/550x309/mr_bean_1704383140543_1704383147458.jpg)
+
+* Substitute the Key and IV values in the script accordingly.
+
+  ![Editor Tool](https://www.hindustantimes.com/ht-img/img/2024/01/04/550x309/mr_bean_1704383140543_1704383147458.jpg)
+
+* Done!
+
 **Example**
 ```csharp
 using TrexB.CipherUtility;
@@ -80,3 +104,7 @@ public class DataPersistenceManager
     } // LoadData
 } // class
 ```
+
+## Note
+* When using this tool in the editor, the data will be saved in Application.dataPath, which essentially corresponds to the Assets folder of the project. This approach enables developers to conveniently test things within the Unity project, ensuring smooth functionality during development.
+* Inside the build, the data will be stored in the Application.persistentDataPath.
