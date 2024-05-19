@@ -1,4 +1,4 @@
-# Data Persistence in Unity
+# Secure Data Persistence in Unity
 
 ## Requirements
 * Requires Unity 2020.3 LTS or higher.
@@ -108,3 +108,12 @@ public class DataPersistenceManager
 ## Note
 * When using this tool in the editor, the data will be saved in Application.dataPath, which essentially corresponds to the Assets folder of the project. This approach enables developers to conveniently test things within the Unity project, ensuring smooth functionality during development.
 * Inside the build, the data will be stored in the Application.persistentDataPath.
+
+## Feedback
+Feel free to provide any feedback by reaching out to me on Discord at the username "trexb22".
+  
+## Authors
+This library is developed by TrexB.
+
+## License
+<a href="https://github.com/TrexB22/cypher-utility-tool/blob/main/LICENSE"> MIT License </a>
