@@ -16,7 +16,7 @@ The Cipher Utility Toolkit has been thoroughly tested and is fully operational o
 ## Data Handling
 **Encryption**
 * Data is passed.
-* It's then transformed into a suitable format for storage using JsonUtility.
+* It is then converted into JSON format using JsonUtility.
 * Next, it undergoes encryption to ensure security.
 * Finally, the encrypted data is saved.
 
@@ -24,9 +24,9 @@ The Cipher Utility Toolkit has been thoroughly tested and is fully operational o
 
 **Decryption**
 * Encrypted data is retrieved.
-* Decryption is performed to restore it to its original form.
+* The data is decrypted and converted into an unencrypted JSON format.
 * JsonUtility is used to convert the decrypted data into its original format.
-* The restored data is then accessible.
+* The data is then accessible in its original, unencrypted format.
 
   Load -> Decryption -> JSON -> Original Format
 
